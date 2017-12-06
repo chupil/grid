@@ -3,7 +3,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     background: #8bd2fd url("img/Marvel-Comics-3D.jpg") repeat;
-    background-size: ;
+
 
 }
 
@@ -31,12 +31,46 @@ li {
 
 }
 
-ul {
+h1{
+    font-size:66px;
+    border-bottom:5px solid gold;
+}
+
+.design-selection:first-child {
     display: flex;
     flex-direction: column;
     padding-left: 0;
+    border: 5px solid rgba(0, 0, 0, 0.4);
+    border-image-source: url("img/fiearborder.png");
+    /*border-image-slice: fill 50;*/
+    border-image-outset: 10px;
+    animation-name: border;
+    animation-duration: 5s;
+    animation-delay: 15s;
+    animation-iteration-count:infinite;
+    animation-fill-mode: forwards;
+    
 
 }
+
+@keyframes border{
+    from{
+    border-image-source: url("img/fiearborder.png");
+    border-image-slice: fill 0;
+    border-image-outset: 10px;
+     
+      
+       
+    }
+    to{
+    border-image-source: url("img/fiearborder.png");
+    border-image-slice: fill 50;
+    border-image-outset: 10px;
+        
+       
+    }
+}
+
 
 .page-wrapper>* {
     padding: 1em;
@@ -46,7 +80,7 @@ ul {
 .page-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 25%);
-    grid-template-rows: :repeat(4, 25%);
+    grid-template-rows:repeat(4, 25%);
 }
 
 .intro {
@@ -72,7 +106,7 @@ ul {
 }
 
 @media screen and (max-width: 1024px) {
-    
+
 .intro {
     grid-column-start: 1;
     grid-column-end: 5;
@@ -90,7 +124,7 @@ ul {
  
  
  
-  .sidebar {
+.sidebar {
     grid-column-start: 1;
     grid-column-end:5;
     grid-row-start: 5;
@@ -154,21 +188,81 @@ h3{
 }
 
 .extra1{
+    display: flex;
+    width: 200px;
+    height: 350px;
     margin:0 auto;
     z-index: 15;
-    padding: 300px;
-    margin:0 auto;
     background: url("img/Spider-Man-TASM2.png") no-repeat;
-    transform: translate(35%,0%);
+    background-size:contain;
     animation-name: translateY;
     animation-duration: 15s;
+    
 
 }
 @keyframes translateY {
     from{
-        transform: translate(35%,-350%);
+        transform: translatey(-900%);
     }
-    to {
-         transform: translate(35%,0%);
+   
+}
+.extra2{
+    display: flex;
+    width: 200px;
+    height: 350px;
+    margin:0 auto;
+    z-index: 15;
+    background: url("img/SJPA_Iron_Man_1.png") no-repeat;
+    background-size:contain;
+    animation-name: translate;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    
+
+}
+@keyframes translate {
+    from{
+        transform: translate(0%);
     }
+    to{
+        transform: translate(250%,-670%);
+    }
+   
+}
+.extra3{
+    display: flex;
+    width: 200px;
+    height: 350px;
+    margin:0 auto;
+    z-index: 15;
+    /*що за фігня?*/
+   
+    background: url("img/fierlaser.png") no-repeat;
+    background-size:contain;
+    animation-name: boll;
+    animation-duration: 5s;
+    animation-delay: 10s;
+    animation-fill-mode: forwards;
+    
+
+}
+
+@keyframes boll{
+    from{
+        transform: translate(200%,-770%);
+      
+       
+    }
+    to{
+        
+        transform: translate(-200%,-750%);
+        visibility: hidden;
+    }
+   
+@media screen and (min-width: 1024px) {
+    /*розібратись*/
+    .extra2, .extra3{
+        display: none;
+    }
+    
 }
